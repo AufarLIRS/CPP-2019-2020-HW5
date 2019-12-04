@@ -66,7 +66,19 @@ int main()
     cout << i->getID();  // 12 13 14 15
   }
 
-  // that's enough, in other approaches you may use shared_ptr or raw pointers with delete operations if needed
+  // fourth approach
+  auto vectorFourth = std::vector<std::shared_ptr<Counted>>();
+  vectorFourth.push_back(std::make_shared<Counted>());
+  vectorFourth.push_back(std::make_shared<Counted>());
+  vectorFourth.push_back(std::make_shared<Counted>());
+  vectorFourth.push_back(std::make_shared<Counted>());
+  cout << endl;
+
+  for (const auto& i : vectorFourth)
+  {
+    cout << i->getID();  // 16 17 18 19
+  }
+  // that's enough, in other approaches you may use raw pointers with delete operations if needed
 
   return 0;
 }
