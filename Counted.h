@@ -11,9 +11,9 @@ public:
   Counted();
   Counted(const Counted&) = delete;
   Counted& operator=(const Counted&) = delete;
-  Counted(Counted&& r);
-  Counted& operator=(Counted&& r);
-  ~Counted() = default;
+  Counted(Counted&& r) = delete;
+  Counted& operator=(Counted&& r) = delete;
+  ~Counted();
 };
 
 #endif  // COUNTED_H

@@ -1,8 +1,8 @@
 TEMPLATE = app
-CONFIG += console c++14
+CONFIG += console c++17
 CONFIG -= app_bundle
 CONFIG -= qt
-CONFIG+=C++14
+CONFIG+=C++17
 
 SOURCES += \
         Counted.cpp \
