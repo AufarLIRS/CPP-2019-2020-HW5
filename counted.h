@@ -10,9 +10,9 @@ public:
   Counted();
   ~Counted();
   Counted(const Counted&) = delete;
-  Counted(Counted&& r);
-  Counted& operator=(Counted&& r);
+  Counted(Counted&& r) = delete;
   Counted& operator=(const Counted&) = delete;
+  Counted& operator=(Counted&& r) = delete;
   int getId();
 };
 

@@ -5,15 +5,9 @@
 
 using namespace std;
 
-Counted func()
-{
-  Counted c;
-  return c;
-}
-
 int main()
 {
-  Counted c1(func());
+  Counted c1;
   Counted c2;
   Counted c3;
 
