@@ -40,4 +40,7 @@ int main()
   {
     std::cout << i->getId() << endl;  // 7, 8 ,9
   }
+
+  auto testV = std::vector<std::unique_ptr<Counted>>();
+  testV.insert(0, c1);  // error
 }
