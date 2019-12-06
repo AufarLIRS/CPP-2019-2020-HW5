@@ -8,10 +8,10 @@ class Counted
 
 public:
   Counted();
-  ~Counted() = default;
+  ~Counted();
   Counted(const Counted&) = delete;
   Counted(Counted&& r);
-  Counted& operator=(Counted&& r);
+  Counted& operator=(Counted&& r) = delete;
   Counted& operator=(const Counted&) = delete;
   int getId();
 };
