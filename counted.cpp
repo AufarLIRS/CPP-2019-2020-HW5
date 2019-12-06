@@ -1,5 +1,4 @@
 #include "counted.h"
-#include <utility>
 
 int Counted::count_ = 0;
 
