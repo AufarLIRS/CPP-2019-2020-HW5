@@ -1,5 +1,6 @@
 #include <iostream>
 #include "counted.h"
+#include <vector>
 using namespace std;
 
 int main()
@@ -15,6 +16,10 @@ int main()
   std::cout << c.getID() << endl;
   std::cout << d.getID() << endl;
   std::cout << e.getID() << endl;
+
+  // Error occurs
+  std::vector<Counted> countedArr;
+  countedArr.push_back(a);
 
   return 0;
 }
