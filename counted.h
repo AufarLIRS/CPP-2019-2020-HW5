@@ -9,7 +9,7 @@ class Counted
 public:
   Counted();
   ~Counted();
-  int get_id();
+  int getId();
   Counted(const Counted&) = delete;
   Counted& operator=(const Counted&) = delete;
   Counted(Counted&&) = delete;

@@ -10,12 +10,12 @@ int main()
   cout << "Task1: " << endl;
   Counted count1;
   Counted count2;
-  cout << count1.get_id() << endl;
-  cout << count2.get_id() << endl;
+  cout << count1.getId() << endl;
+  cout << count2.getId() << endl;
   for (int i = 0; i < 3; i++)
   {
     Counted count_new;
-    cout << count_new.get_id() << endl;
+    cout << count_new.getId() << endl;
   }
 
   cout << endl << "Task3.1: " << endl;
@@ -24,7 +24,7 @@ int main()
   vect1.push_back(std::make_unique<Counted>());
   for (auto& i : vect1)
   {
-    cout << i->get_id() << endl;
+    cout << i->getId() << endl;
   }
 
   cout << endl << "Task3.2: " << endl;
@@ -33,7 +33,7 @@ int main()
   vect2.push_back(std::make_shared<Counted>());
   for (auto& j : vect2)
   {
-    cout << j->get_id() << endl;
+    cout << j->getId() << endl;
   }
   cout << endl;
 }

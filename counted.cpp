@@ -13,7 +13,7 @@ Counted::~Counted()
   count_--;
 }
 
-int Counted::get_id()
+int Counted::getId()
 {
   return id_;
 }
