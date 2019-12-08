@@ -8,22 +8,22 @@ using namespace std;
 int main()
 //--------------------------------------Task-1--------------------------------------//
 {
-  Counted a;
-  Counted b;
-  Counted c;
-  Counted d;
-  Counted e;
-
   {
+    Counted a;
+    Counted b;
+    Counted c;
     std::cout << a.getID() << endl;
     std::cout << b.getID() << endl;
     std::cout << c.getID() << endl;
   }
-
+  cout << endl;
   {
+    Counted d;
+    Counted e;
     std::cout << d.getID() << endl;
     std::cout << e.getID() << endl;
   }
+
   //
   //
   //
