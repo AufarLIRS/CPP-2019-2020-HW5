@@ -12,8 +12,8 @@ public:
   Counted();
   int getId();
 
-  Counted(const Counted & a) = delete;
-  Counted& operator = (const Counted & a ) = delete;
+  Counted(const Counted& a) = delete;
+  Counted& operator=(const Counted& a) = delete;
   ~Counted();
 };
 

@@ -3,26 +3,31 @@
 
 Counted::Counted()
 {
-    if(freeIDList.size()!=0){
-        id = freeIDList.back();
-        freeIDList.pop_back();
-    }
-    else if(lastID > -1){
-        lastID++;
-        id = lastID;
-    }
-    else{
-        this->~Counted();
-    }
+  if (freeIDList.size() != 0)
+  {
+    id = freeIDList.back();
+    freeIDList.pop_back();
+  }
+  else if (lastID > -1)
+  {
+    lastID++;
+    id = lastID;
+  }
+  else
+  {
+    this->~Counted();
+  }
 }
 
-Counted::~Counted(){
-    if(id > 0)
-        freeIDList.push_back(this->id);
+Counted::~Counted()
+{
+  if (id > 0)
+    freeIDList.push_back(this->id);
 }
 
-int Counted::getId(){
-    return id;
+int Counted::getId()
+{
+  return id;
 }
 
 std::vector<int> Counted::freeIDList = std::vector<int>();
