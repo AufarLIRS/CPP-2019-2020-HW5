@@ -9,4 +9,4 @@ using namespace std;
 
 int nand;
 
-#endif  // MAIN_H
+#endif // MAIN_H
