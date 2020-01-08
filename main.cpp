@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 #include "Counted.h"
 
 using namespace std;
@@ -23,11 +24,14 @@ int main()
   countedList.push_back(b);
   countedList.push_back(c);
   countedList.push_back(e);
+
   // countedList().push_back(c);
   // countedList().push_back(d);
   // countedList().push_back(e);
+  std::vector<std::shared_ptr<Counted>> counteds;
+  counteds.push_back(std::make_shared<Counted>());
 
-  cout << countedList.back()->getId();
+  std::cout << counteds.back()->getId();
 
   return 0;
 }

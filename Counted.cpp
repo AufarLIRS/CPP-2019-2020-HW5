@@ -74,7 +74,6 @@ Counted& Counted::operator=(Counted&& a)
 {
   freeIDList.push_back(this->id);
   this->id = a.getId();
-  a.~Counted();
   for (int i = 0; i < freeIDList.size(); i++)
   {
     if (freeIDList[i] == this->id)
