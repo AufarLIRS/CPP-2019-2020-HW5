@@ -6,11 +6,11 @@ const char* IDException::what() const throw()
 {
   return "ID ERROR";
 }
-int getMinID(std::vector<int> vec)
+size_t getMinID(std::vector<size_t> vec)
 {
-  int min = vec.front();
-  int min_index = 0;
-  for (int i = 0; i < vec.size(); i++)
+  size_t min = vec.front();
+  size_t min_index = 0;
+  for (size_t i = 0; i < vec.size(); i++)
   {
     if (vec[i] < min)
     {
@@ -25,8 +25,8 @@ int getMinID(std::vector<int> vec)
 
 Counted::Counted()
 {
-  if (freeIDList.size() !=
-      0)  //если у нас есть освободившиеся айдишники, то будем использовать их, начнем с минимального доступного
+  if (freeIDList.size() != 0)  //если у нас есть освободившиеся айдишники, то будем использовать их, начнем с
+                               //минимального доступного
   {
     id = getMinID(freeIDList);
   }
@@ -47,20 +47,20 @@ Counted::~Counted()
   freeIDList.push_back(this->id);
 }
 
-int Counted::getId()
+size_t Counted::getId()
 {
   return id;
 }
 
-std::vector<int> Counted::freeIDList = std::vector<int>();
-int Counted::lastID = 0;
+std::vector<size_t> Counted::freeIDList = std::vector<size_t>();
+size_t Counted::lastID = 0;
 
 Counted::Counted(const Counted&& a)
 {
   freeIDList.push_back(this->id);
   this->id = a.id;
   a.~Counted();
-  for (int i = 0; i < freeIDList.size(); i++)
+  for (size_t i = 0; i < freeIDList.size(); i++)
   {
     if (freeIDList[i] == this->id)
     {
@@ -74,7 +74,7 @@ Counted& Counted::operator=(Counted&& a)
 {
   freeIDList.push_back(this->id);
   this->id = a.getId();
-  for (int i = 0; i < freeIDList.size(); i++)
+  for (size_t i = 0; i < freeIDList.size(); i++)
   {
     if (freeIDList[i] == this->id)
     {

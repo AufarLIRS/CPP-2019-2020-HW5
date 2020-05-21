@@ -3,6 +3,7 @@
 #include <vector>
 #include <exception>
 #include <utility>
+#include <cstddef>
 
 class IDException : public std::exception
 {
@@ -11,13 +12,13 @@ class IDException : public std::exception
 
 class Counted
 {
-  static std::vector<int> freeIDList;
-  int id;
-  static int lastID;
+  static std::vector<size_t> freeIDList;
+  size_t id;
+  static size_t lastID;
 
 public:
   Counted();
-  int getId();
+  size_t getId();
 
   Counted(const Counted& a) = delete;
   Counted& operator=(const Counted& a) = delete;
