@@ -19,12 +19,12 @@ class Counted
 public:
   Counted();
   size_t getId();
-
-  Counted(const Counted& a) = delete;
-  Counted& operator=(const Counted& a) = delete;
   ~Counted();
-  Counted& operator=(Counted&& a);
-  Counted(const Counted&& a);
+
+  Counted(const Counted&) = delete;
+  Counted(Counted&&) = delete;
+  Counted& operator=(const Counted&) = delete;
+  Counted& operator=(Counted&&) = delete;
 };
 
 //#endif  // COUNTED_H
