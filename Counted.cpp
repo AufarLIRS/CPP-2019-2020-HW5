@@ -54,33 +54,3 @@ size_t Counted::getId()
 
 std::vector<size_t> Counted::freeIDList = std::vector<size_t>();
 size_t Counted::lastID = 0;
-
-Counted::Counted(const Counted&& a)
-{
-  freeIDList.push_back(this->id);
-  this->id = a.id;
-  a.~Counted();
-  for (size_t i = 0; i < freeIDList.size(); i++)
-  {
-    if (freeIDList[i] == this->id)
-    {
-      freeIDList.erase(freeIDList.begin() + i);
-      break;
-    }
-  }
-}
-
-Counted& Counted::operator=(Counted&& a)
-{
-  freeIDList.push_back(this->id);
-  this->id = a.getId();
-  for (size_t i = 0; i < freeIDList.size(); i++)
-  {
-    if (freeIDList[i] == this->id)
-    {
-      freeIDList.erase(freeIDList.begin() + i);
-      break;
-    }
-  }
-  return *this;
-}
